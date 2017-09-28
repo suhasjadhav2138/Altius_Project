@@ -22,4 +22,5 @@ static3==0.7.0
 uritemplate==3.0.0
 urllib3==1.22
 Werkzeug==0.12.2
+gunicorn==19.7.1
 whitenoise==3.3.1
