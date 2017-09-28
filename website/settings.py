@@ -82,7 +82,6 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 DATABASES = {
     'default': {
@@ -94,6 +93,8 @@ DATABASES = {
         'PORT': '',
 }
 }
+DATABASES['default'].update(db_from_env)
+
 ACCOUNT_ACTIVATION_DAYS = 7
 
 # Password validation
