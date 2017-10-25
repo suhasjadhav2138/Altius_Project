@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from .form import UserLoginForm, UserRegisterForm, DocumentForm
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from django.contrib.auth import authenticate, login, logout
 from django.core.mail import send_mail
 from django.template import RequestContext, loader
@@ -11,6 +11,7 @@ from .models import UserProfilename, Document
 from datetime import datetime
 import csv
 from django.core.urlresolvers import reverse
+from django.template import RequestContext
 
 
 #home page of the website
@@ -71,6 +72,14 @@ def logout_view(request):
 #     return render(request, 'login/profile.html', {})
 
 #upload csv and read in construction
+
+def validate_view (request):
+    if request.method == 'POST':
+        print request.POST
+        a= 8
+        test = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR')).split(',')[-1].strip()
+        print test
+        return render(request, 'login/profile.html', {'b':a})
 
 
 def list_file(request):

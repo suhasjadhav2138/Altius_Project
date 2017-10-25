@@ -1,0 +1,361 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+html, body{
+	overflow-x: hidden;
+    margin:0;
+    background:	#fff;
+}
+.customnav{
+padding-left:0px;
+padding-right:0px;
+}
+.navbar-default {
+    background-color: #252B2D;
+    border-color: #e7e7e7;
+	color:#fff;
+	    line-height: 5;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+	  padding: 10px 10px;
+	    margin: 5px 0px;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+  
+}
+.navbar-right {
+    margin-right: 30px;
+	    margin-top: 20px;
+}
+.navbar-header {
+    padding: 10px 35px;
+}
+.headtext{
+	font-size:20px;
+}
+.headinput{
+	margin:0 auto;
+	/* width:auto; */
+}
+.customrowfirst{
+	padding: 30px 0;
+}
+.customrowfirst img{
+	width:100%;
+}
+.Pricingcls{
+	text-align:center;
+	    padding: 10px;
+}
+.PricingSub{
+		padding: 35px 0;
+		border:1px solid #000;
+}
+.PricingSub.ACTIVE{
+	background-color:#5778c1;
+	color:#ffffff;
+	    margin-top: -15px;
+}
+.PricingSub.ACTIVE h2{
+	color:#ffffff;
+}
+.PricingSub p{
+	    border-bottom: 1px solid;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+.updatebtn{
+	    margin: 15px 0;
+    background-color: #bfb5b5;
+    color: #fff;
+}
+.purposes{
+	width: 60%;
+    margin: 0 auto;
+}
+.informationis{
+	margin-top:15px;
+	margin-bottom:35px;
+	text-align:left;
+	    font-size: 15px;
+}
+.PricingSub h2{
+	color:blue;
+}
+.decripList dd{
+	padding-bottom:20px;
+}
+.TitleCommancls{
+	padding:10px 0;
+}
+.prcingRow .col-md-3{
+    margin: 0;
+    padding: 0;
+	cursor:pointer;
+}
+.Tableheadinput{
+	    width: auto;
+		float: left;
+}
+.Tablecircle{
+float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 3px 15px;
+	cursor:pointer;
+}
+.downloadcsv{
+	float: right;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    margin-right: 2px;
+}
+.Export{
+	font-size: 20px;
+	float: right;
+	line-height: 45px;
+    margin-left: 8px;
+}
+.CircleOne{
+	background-color:green;
+}
+.CircleTwo{
+	background-color:red;
+}
+.CircleThree{
+	background-color:orange;
+}
+.inputPlanePage {
+    margin: 15px auto;
+    width: 90%;
+}
+.inputPlaneFirst{
+	 width: auto;
+	 margin:0 auto;
+}
+.LoginSearchBtn,.LoginUploadBtn{
+	background-color:#f9f9f9;
+	border: 1px solid #b0b3ae;
+	font-weight:400;
+	width: 200px;
+    margin-top: 20px;
+	color:#fff;
+}
+.NeedBtn button:hover{
+		background-color:#252B2D;
+	    border: 1px solid #252B2D;
+		color:#fff;
+		font-weight:400;
+}
+.Logininput{
+	    width: 100%;
+		margin: 0 auto;
+}
+.loginborder{
+	    width: 50%;
+    border: 2px solid #fff;
+    padding: 20px;
+    margin: 0 auto;
+}
+.table_top{
+	margin-top:20px;
+}
+.cvscols{
+	padding-left:0px;
+	padding-right:0px;
+}
+.csfrom{
+	width:60%;
+	margin:0 auto;
+}
+.loginborder h2{
+	margin-top: 15%;
+    margin-bottom: 35px;
+}
+.NeedBtn{
+	    margin: 30px 0;
+}
+.CreateSignUpBtn{
+	    margin: 0 0 15px 0;
+}
+.PlaySteipBtn{
+	    margin: 0px 0px 15px 0px;
+		}
+thead tr{
+	    background-color: #045089 ;
+		color:#fff;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {  
+    border-bottom: 1px solid #045089 ;
+}
+.cvsCheckbox{text-align:center;}
+.customcsvRow{
+	margin:15px 0;
+	    overflow-x: auto;
+    overflow-y: auto;
+}
+.navbar-nav>li {
+    border-bottom: 1px solid #252B2D;
+    border-radius: 0px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+.navbar-nav>li:hover {
+    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+.form-control{
+	height:45px;
+	border-radius:0px;
+}
+.btn {
+	height:45px;
+	border-radius:0px;
+	color:#fff !important;
+	background-color: #045089  !important;
+    border-color: #045089  !important;
+	font-size: 20px;
+}
+.PricingSub .updatebtn,.Searchresult{
+	width: 200px;
+}
+.btn-success.Searchresult{
+	margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin-left: 15px;
+}
+.searchreult tr td{
+	border-top: 1px solid #045089 !important;
+	border-bottom: 1px solid #045089;
+}
+.searchreult{
+	margin-top:20px;
+}
+.result_pan{
+	margin-left:15px;
+}
+.xyz{float:left;}
+.btn:hover{
+	background-color: #5778c1  !important;
+    border-color: #5778c1  !important;
+	color:#fff !important;
+}
+.btn.btn-success{
+	background-color: #5cb85c !important;
+    border-color: #4cae4c !important;
+	width: 200px;
+	margin-top: 40px;
+    margin-bottom: 20px;
+}
+.btn.btn-success:hover{
+	background-color: #449d44 !important;
+    border-color: #398439 !important;
+}
+.login_text{
+	width:80%;
+	margin:0 auto;
+	text-align:center;
+	margin-top:35px;
+}
+.emails_title{
+	margin-bottom:30px;
+}
+.sign_up label{
+	margin-top:20px;
+	margin-bottom:15px;
+}
+.sign_up {
+	width: 60%;
+    margin: 0 auto;
+	margin-bottom:30px;
+}
+.CreateSignUpBtn{
+	margin-top:30px;
+	margin-bottom:30px;
+	width: 200px;
+}
+.right_btn{
+	color: #252B2D;
+    line-height: 45px;
+    font-size: 16px;
+}
+@media only screen and (max-width: 1024px) {
+	.prcingRow{
+		margin-left:0;
+		margin-right:0;
+	}
+	.loginborder {
+		width: 70%;
+	}
+	.inputPlaneFirst {
+		width: 60%;
+	}
+	.csfrom {
+		width: 50%;
+	}
+	.customrowfirst img {
+		margin-top: 20px;
+	}
+	.prcingRow .col-md-3 {
+		height: 515px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	   .navbar-nav {
+		margin: 7.5px 0px;
+	}
+	.loginborder {
+		width: 100%;
+	}
+	.csfrom {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.prcingRow .col-md-3 {
+		padding: 0 15px;
+	}
+	.tableREsponsive{
+			overflow-x: auto;
+	}
+	.navbar-default .navbar-nav>li>a {
+		text-align: center;
+	}
+	.cvscols {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.Tablecircle {
+		margin: 10px 0px;
+	}
+	.navbar-nav>li:hover {
+		margin: 0 auto;
+		width: 50%;
+	}
+	.sign_up {
+		width: 100%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.btn.btn-success {
+		width: 145px;
+	}
+	.PricingSub .updatebtn, .Searchresult {
+		width: 145px;
+	}
+	.customrowfirst img {
+		margin-top: 20px;
+	}
+	.purposes {
+		width: 100%;
+	}
+}

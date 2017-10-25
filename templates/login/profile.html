@@ -76,5 +76,16 @@
             <p><input type="submit" value="Upload"/></p>
         </form>
 
+        <form action="/validate/" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <input type="text" name="first_name">
+            <input type="text" name="last_name">
+            <input type="text" name="domain">
+            <input type="submit">
+            </form>
+        
+
+
+
+
 </body>
 </html>
