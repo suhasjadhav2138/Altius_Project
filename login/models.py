@@ -17,3 +17,18 @@ class Document(models.Model):
     docfile = models.FileField(upload_to='documents/%Y/%m/%d')
     def __unicode__(self):
         return unicode(self.docfile)
+
+
+class Search_details(models.Model):
+    user = models.ForeignKey(User, null=True, blank=True)
+    run_id = models.CharField(max_length=3)
+    date_pulled = models.CharField(max_length=15)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=100)
+    email_original = models.EmailField(max_length=30)
+    company_url = models.CharField(max_length=30)
+    email_guess = models.CharField(max_length=30)
+    email_score = models.CharField(max_length=3)
+
+
