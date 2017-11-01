@@ -12,7 +12,7 @@ from datetime import datetime
 import csv
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
-
+from Controller import validate_email  
 
 #home page of the website
 def index_view(request):
@@ -109,3 +109,19 @@ def list_file(request):
         'login/profile.html',
         {'documents': documents, 'form': form}
     )
+
+def email_validate(request):
+    print("jsdhgfsjhdfgsjhfgsdjhfgjhfgsdjhfgsdjfgsdjhfgsdjhfg")
+    if request.method == 'POST':
+        first_name= request.POST.get('first_name')
+        last_name= request.POST.get('last_name')
+        title= 'CEO'
+        company_email = request.POST.get('company_email')
+        company_website= request.POST.get('company_website')
+    
+        print first_name,last_name,title,company_email,company_website
+        data_list = [first_name,last_name,title,company_email,company_website]
+        print data_list
+        person_details = validate_email.select_type(data_list)
+        print person_details
+    return render(request, 'login/index.html', {'details': person_details})
