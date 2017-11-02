@@ -149,7 +149,7 @@
 						<p class="text-center headtext">
 							You Have 19 credits remaning
 						</p>
-						<form method= "POST" action="/validate_email/" class="text-center csfrom">{% csrf_token %}
+						<form method= "POST" action="/app/" class="text-center csfrom">{% csrf_token %}
 							<div class="row">
 								<div class="col-md-6 text-left">
 									<label>
@@ -166,16 +166,16 @@
 							</div>
 							<br>
 							<div class="row">
-								<div class="col-md-6 text-left">
-							<div class="form-group">
+								<!-- <div class="col-md-6 text-left"> -->
+							<!-- <div class="form-group">
 								<label>
 									 Company Email
 								</label>
 								<input type="text" class="form-control headinput" placeholder="Company EmailID" name="company_email"/>
-							</div>
+							</div> -->
 
-							</div>
-							<div class="col-md-6 text-left">
+							
+							<div class="col-md-12 text-left">
 								<div class="form-group">
 									<label>
 										 Company Website
@@ -193,7 +193,7 @@
 									<table class="table searchreult">
 										<tr>
 											<td>
-												<span class="xyz">xyz@gmail.com</span>
+												<span class="xyz">{{ details }}</span>
 												<!-- {{ details }} -->
 											</td>
 										</tr>
@@ -201,7 +201,6 @@
 								</div>
 							</div>
 						</form>
-						{{ details }}
 					</div>
 				</div>
 			</div>

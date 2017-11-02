@@ -66,8 +66,8 @@ def worker(person):
         person_dict["first_name"] = person[0]
         person_dict["last_name"] = person[1]
         person_dict["name"] = person_dict["first_name"] + " " + person_dict["last_name"]
-        person_dict["email_original"] = person[3]
-        person_dict["company_url"] = person[4]
+        # person_dict["email_original"] = person[3]
+        person_dict["company_url"] = person[3]
         print(person_dict["company_url"])
 
         # get ordered priority list of email permutations

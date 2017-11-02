@@ -10,8 +10,8 @@ urlpatterns = [
     url(r'^logout/', views.logout_view, name="logout"),
     url(r'^register/', views.register_view, name="register"),
     url(r'^validate/', views.validate_view, name="validate_view"),
-    url(r'^profile/$', views.list_file, name='list_file'),
-    url(r'^validate_email/$', views.email_validate, name='email_validate')
+    url(r'^profile/$', views.list_file, name='list_file')
+    # url(r'^validate_email/$', views.email_validate, name='email_validate')
 
 
 ]

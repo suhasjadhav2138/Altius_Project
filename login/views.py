@@ -16,6 +16,21 @@ from Controller import validate_email
 
 #home page of the website
 def index_view(request):
+    if request.method == 'POST':
+        first_name= request.POST.get('first_name')
+        last_name= request.POST.get('last_name')
+        title= 'CEO'
+        # company_email = request.POST.get('company_email')
+        company_website= request.POST.get('company_website')
+    
+        print first_name,last_name,title,company_website
+        data_list = [first_name,last_name,title,company_website]
+        print data_list
+        person_details = validate_email.select_type(data_list)
+        print person_details
+        return render(request, 'login/index.html', {'details': person_details})
+    if request.method == 'GET':
+
         return render(request, "login/index.html", {})
 
 #login page 
@@ -110,18 +125,18 @@ def list_file(request):
         {'documents': documents, 'form': form}
     )
 
-def email_validate(request):
-    print("jsdhgfsjhdfgsjhfgsdjhfgjhfgsdjhfgsdjfgsdjhfgsdjhfg")
-    if request.method == 'POST':
-        first_name= request.POST.get('first_name')
-        last_name= request.POST.get('last_name')
-        title= 'CEO'
-        company_email = request.POST.get('company_email')
-        company_website= request.POST.get('company_website')
+# def email_validate(request):
+#     print("jsdhgfsjhdfgsjhfgsdjhfgjhfgsdjhfgsdjfgsdjhfgsdjhfg")
+#     if request.method == 'POST':
+#         first_name= request.POST.get('first_name')
+#         last_name= request.POST.get('last_name')
+#         title= 'CEO'
+#         company_email = request.POST.get('company_email')
+#         company_website= request.POST.get('company_website')
     
-        print first_name,last_name,title,company_email,company_website
-        data_list = [first_name,last_name,title,company_email,company_website]
-        print data_list
-        person_details = validate_email.select_type(data_list)
-        print person_details
-    return render(request, 'login/index.html', {'details': person_details})
+#         print first_name,last_name,title,company_email,company_website
+#         data_list = [first_name,last_name,title,company_email,company_website]
+#         print data_list
+#         person_details = validate_email.select_type(data_list)
+#         print person_details
+#         return render(request, 'login/index.html', {'details': person_details})
