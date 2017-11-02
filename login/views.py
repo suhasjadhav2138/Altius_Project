@@ -57,6 +57,7 @@ def login_view(request):
 def register_view(request):
     title = "Register"
     form = UserRegisterForm(request.POST)
+    print form
     if form.is_valid():
         user = form.save(commit=False)
         email = form.cleaned_data.get('email')
