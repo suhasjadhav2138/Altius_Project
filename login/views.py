@@ -35,9 +35,11 @@ def index_view(request):
 
 #login page 
 def login_view(request):
-    print "inside login view"
+    print "inside login viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww "
+    print request.POST
     if request.method == "POST":
         username = request.POST['username']
+        print username
         password = request.POST['password']
         print username, password, "username and password"
         user = authenticate(username=username, password=password)
