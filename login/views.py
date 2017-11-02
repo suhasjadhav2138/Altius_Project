@@ -28,6 +28,11 @@ def index_view(request):
         print data_list
         person_details = validate_email.select_type(data_list)
         print person_details
+        try:
+            
+            person_details = person_details[0]['email_guess']
+        except:
+            person_details = "domain not found"
         return render(request, 'login/index.html', {'details': person_details})
     if request.method == 'GET':
 
