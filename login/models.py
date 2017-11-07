@@ -1,6 +1,9 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
+from django.conf import settings
+from django.contrib.auth.signals import user_logged_in
 
 
 class UserProfilename(models.Model):
@@ -31,4 +34,14 @@ class Search_details(models.Model):
     email_guess = models.CharField(max_length=30)
     email_score = models.CharField(max_length=3)
 
+class UserSession(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
+    session = models.ForeignKey(Session)  
 
+    def user_logged_in_handler(sender, request, user, **kwargs):
+        UserSession.objects.get_or_create(
+            user = user,
+            session_id = request.session.session_key
+        )
+
+    user_logged_in.connect(user_logged_in_handler)

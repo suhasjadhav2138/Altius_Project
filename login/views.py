@@ -13,6 +13,7 @@ import csv
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
 from Controller import validate_email  
+from django.contrib.auth.decorators import login_required
 
 #home page of the website
 def index_view(request):
@@ -104,7 +105,7 @@ def validate_view (request):
         print test
         return render(request, 'login/profile.html', {'b':a})
 
-
+@login_required
 def list_file(request):
     # Handle file upload
     if request.method == 'POST':
