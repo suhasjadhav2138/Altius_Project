@@ -26,7 +26,7 @@ SECRET_KEY = '9jdw7_*cwcv4k=j()r*vuuni6tg+8b+hu5rew4ma57=*o5s%!b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testapp08.herokuapp.com','0.0.0.0:5000','127.0.0.1','192.168.2.131']
+ALLOWED_HOSTS = ['testapp08.herokuapp.com','0.0.0.0:5000','127.0.0.1','192.168.2.131','pursuitdemo08.herokuapp.com']
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
