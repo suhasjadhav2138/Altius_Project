@@ -158,5 +158,5 @@ SERVER_EMAIL = 'jagtap.akshay5555@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'jagtap.akshay5555@gmail.com'
-EMAIL_HOST_PASSWORD = 'akshayjagtap'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -73,9 +73,9 @@ def register_view(request):
         password = form.cleaned_data.get('password')
         user.set_password(password)
         authenticate(username=user.username, password=password)
-        user.is_active = False
+        user.is_active = True
         user.save()
-        return render(request, "login/index.html", {"title": title, "username": usern})
+        return HttpResponseRedirect('/accounts/login/')
 
     context = {
         "form": form,

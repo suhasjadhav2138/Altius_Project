@@ -49,7 +49,7 @@ class UserSession(models.Model):
    
 
     def user_logged_in_handler(sender, request, user, **kwargs):
-
+        print("ooooooooooooooooooooooooooooooooooooooooooooooooo")
         data= get_ip_location()
         ip = data['ip']
         location = data['city']+', '+data['region'] + ', '+ data['country']
