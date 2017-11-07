@@ -26,7 +26,7 @@ SECRET_KEY = '9jdw7_*cwcv4k=j()r*vuuni6tg+8b+hu5rew4ma57=*o5s%!b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testapp08.herokuapp.com','0.0.0.0:5000','127.0.0.1']
+ALLOWED_HOSTS = ['testapp08.herokuapp.com','0.0.0.0:5000','127.0.0.1','192.168.2.131']
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
@@ -38,16 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    # 'user_sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
 ]
 
 AUTH_PROFILE_MODULE = 'login.UserProfile'
+# GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'user_sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -56,7 +59,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
-
+# SESSION_ENGINE = 'user_sessions.backends.db'
 ROOT_URLCONF = 'website.urls'
 
 TEMPLATES = [

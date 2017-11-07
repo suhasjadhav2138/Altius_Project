@@ -4,7 +4,11 @@ from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
 from django.conf import settings
 from django.contrib.auth.signals import user_logged_in
-
+from django.contrib.gis.geoip2 import GeoIP2
+import re
+import json
+from urllib2 import urlopen
+from django.contrib import admin
 
 class UserProfilename(models.Model):
     name = models.OneToOneField(User, primary_key=True)
@@ -36,12 +40,37 @@ class Search_details(models.Model):
 
 class UserSession(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    session = models.ForeignKey(Session)  
+    session = models.ForeignKey(Session)
+    ip = models.CharField(max_length=25) 
+    location = models.CharField(max_length=100) 
+    
+    # def __unicode__(self):
+    #     return unicode(self.sessio)
+   
 
     def user_logged_in_handler(sender, request, user, **kwargs):
+
+        data= get_ip_location()
+        ip = data['ip']
+        location = data['city']+', '+data['region'] + ', '+ data['country']
         UserSession.objects.get_or_create(
             user = user,
-            session_id = request.session.session_key
+            session_id = request.session.session_key,
+            ip=ip,
+            location=location
         )
 
     user_logged_in.connect(user_logged_in_handler)
+
+def get_ip_location():
+    url = 'http://ipinfo.io/json'
+    response = urlopen(url)
+    data_dict = json.load(response)
+    return data_dict
+    # IP=data['ip']
+    # org=data['org']
+    # city = data['city']
+    # country=data['country']
+    # region=data['region']
+
+
