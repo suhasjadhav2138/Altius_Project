@@ -149,3 +149,4 @@ def list_file(request):
 #         person_details = validate_email.select_type(data_list)
 #         print person_details
 #         return render(request, 'login/index.html', {'details': person_details})
+

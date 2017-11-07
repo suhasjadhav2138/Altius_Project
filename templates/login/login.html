@@ -145,11 +145,11 @@ button {
                                                 <a href="http://pursuit.ai/contact/">Get In Touch</a>
                                             </li>			
                                             <li>
-                                                    <a href="/app/">Home</a>
+                                                    <a href="app/">Home</a>
                                                     
                                                 </li>
                                                 <li>
-                                                        <a href="/register/">Signup</a>
+                                                        <a href="/accounts/register/">Signup</a>
                                                         
                                                     </li>					
                                                                   
@@ -171,7 +171,7 @@ button {
                                     <h2 class="text-center">
                                 Login 
                             </h2>
-                                    <form action="/login/" method="POST" role="form" class="text-center ">{% csrf_token %}
+                                    <form action="/accounts/login/" method="POST" role="form" class="text-center ">{% csrf_token %}
                                         <div class="form-group">
                                             <input type="text" class="form-control Logininput" placeholder="User Name" name="username" />
                                         </div>
@@ -183,7 +183,7 @@ button {
                                         </button>
                                     </form>
                                     <div class="login_text">
-                                       <span> <a href="ForgotPassword.html">If you forgot your password, Click here.</a></span>
+                                       <span> <a href="/password_reset">If you forgot your password, Click here.</a></span>
                                     </div>
                                 </div>
                             </div>
