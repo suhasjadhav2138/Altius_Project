@@ -38,29 +38,29 @@ class Search_details(models.Model):
     email_guess = models.CharField(max_length=30)
     email_score = models.CharField(max_length=3)
 
-class UserSession(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL)
-    session = models.ForeignKey(Session)
-    ip = models.CharField(max_length=25) 
-    location = models.CharField(max_length=100) 
+# class UserSession(models.Model):
+#     user = models.ForeignKey(settings.AUTH_USER_MODEL)
+#     session = models.ForeignKey(Session)
+#     ip = models.CharField(max_length=25) 
+#     location = models.CharField(max_length=100) 
     
     # def __unicode__(self):
     #     return unicode(self.sessio)
-   
+    
 
-    # def user_logged_in_handler(sender, request, user, **kwargs):
-    #     print("ooooooooooooooooooooooooooooooooooooooooooooooooo")
-    #     data= get_ip_location()
-    #     ip = data['ip']
-    #     location = data['city']+', '+data['region'] + ', '+ data['country']
-    #     UserSession.objects.get_or_create(
-    #         user = user,
-    #         session_id = request.session.session_key,
-    #         ip=ip,
-    #         location=location
-    #     )
+        # def user_logged_in_handler(sender, request, user, **kwargs):
+        #     print("ooooooooooooooooooooooooooooooooooooooooooooooooo")
+        #     data= get_ip_location()
+        #     ip = data['ip']
+        #     location = data['city']+', '+data['region'] + ', '+ data['country']
+        #     UserSession.objects.get_or_create(
+        #         user = user,
+        #         session_id = request.session.session_key,
+        #         ip=ip,
+        #         location=location
+        #     )
 
-    # user_logged_in.connect(user_logged_in_handler)
+        # user_logged_in.connect(user_logged_in_handler)
 
 def get_ip_location():
     url = 'http://ipinfo.io/json'
