@@ -35,13 +35,14 @@ STATICFILES_DIRS = [
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     # 'user_sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
+    'django.contrib.auth',
+
 ]
 
 AUTH_PROFILE_MODULE = 'login.UserProfile'

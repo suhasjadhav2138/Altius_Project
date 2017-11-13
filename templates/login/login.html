@@ -1,168 +1,74 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
- <title>Login Page</title>
-<style>
-    /* Full-width input fields */
-input[type=text], input[type=password], input[type=email] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {
-    float: left;
-    width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-        width: 100%;
-    }
-}
-</style>
-</head>
-<body>
-        <a href="/app/">Home</a> <br>
-        <a href="/register/">Register</a>
-        Click here if you are not registered »
-        
-<h3>Log In</h3>
-
-{% if error_message %}
-    <p><strong>{{ error_message }}</strong></p>
-{% endif %}
-<form action="" method="post">{% csrf_token %}
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter username" name="username">
-
-
-      <label><b>Password</b></label>
-    <input type="password" placeholder="Password" name="password">
-
-    <div class="clearfix">
-      <button type="submit" class="signupbtn">Login</button>
-    </div>
-  </div>
-</form>
-</body>
-</html> -->
+{% extends 'login/base.html' %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Loading Page</title>
-        <link href= "{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-        
-        <link href="{% static 'css/custom.css' %}" type="text/css" rel="stylesheet">
-        <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
-         <script  type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-  </head>
+
 	<body class="loginBg">
-            <header>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12 customnav">
-                            <div id="header-wrap">
-                                        <div id="header" class="clear">
-                                <nav class="navbar navbar-default" role="navigation">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                                        </button>
-                                      <div class="logoI">
-                                            <a href="http://pursuit.ai/">
-                                                <img src="{% static 'images/logo.png' %}" height="30" width="131" alt="Pursuit">
-                                            </a>
+{% block content %}
+
+                <header>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12 customnav">
+                                <div id="header-wrap">
+                                            <div id="header" class="clear">
+                                    <nav class="navbar navbar-default" role="navigation">
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                                <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                            </button>
+                                          <div class="logoI">
+                                                <a href="http://pursuit.ai/">
+                                                    <img src="{% static 'images/logo.png' %}" height="30" width="131" alt="Pursuit">
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li class="dropdown">
-                                                              <a href="http://pursuit.ai/email-finder" class="dropdown-toggle" data-toggle="dropdown">Email Hunter <b class="caret"></b></a> 
-                                                              <ul class="dropdown-menu">
-                                                                <li><a href="#">Free Email</a></li>
-                                                                <li><a href="http://pursuit.ai/pricing/">Plans & Pricing</a></li>
-                                                              </ul>
-                                            </li>
-                                            <li class="dropdown">
-                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDR Outsourcing <b class="caret"></b></a> 
-                                                  <ul class="dropdown-menu">
-                                                    <li><a href="http://pursuit.ai/lead-generation/">Lead Generation</a></li>
-                                                    <li><a href="http://pursuit.ai/prospect-outreach/">Prospect Outreach</a></li>
-                                                    <li><a href="http://pursuit.ai/sdr-oursourcing/">Why Outsource?</a></li>
-                                                    <li><a href="http://pursuit.ai/pricing/">Plans & Pricing</a></li>
-                                                  </ul>
+
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li class="dropdown">
+                                                                  <a href="http://pursuit.ai/email-finder" class="dropdown-toggle" data-toggle="dropdown">Email Hunter <b class="caret"></b></a>
+                                                                  <ul class="dropdown-menu">
+                                                                    <li><a href="#">Free Email</a></li>
+                                                                    <li><a href="http://pursuit.ai/pricing/">Plans & Pricing</a></li>
+                                                                  </ul>
                                                 </li>
-                                            <li class="dropdown">
-                                                  <a href="http://pursuit.ai/about/" class="dropdown-toggle" data-toggle="dropdown">Company <b class="caret"></b></a> 
-                                                  <ul class="dropdown-menu">
-                                                    <li><a href="http://pursuit.ai/blog/">Blog</a></li>
-                                                    <li><a href="http://pursuit.ai/careers/">Careers</a></li>
-                                                  </ul>
-                                            </li>
-                                            <li class="GetInTouchCls">
-                                                <a href="http://pursuit.ai/contact/">Get In Touch</a>
-                                            </li>			
-                                            <li>
-                                                    <a href="/app">Home</a>
-                                                    
+                                                <li class="dropdown">
+                                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDR Outsourcing <b class="caret"></b></a>
+                                                      <ul class="dropdown-menu">
+                                                        <li><a href="http://pursuit.ai/lead-generation/">Lead Generation</a></li>
+                                                        <li><a href="http://pursuit.ai/prospect-outreach/">Prospect Outreach</a></li>
+                                                        <li><a href="http://pursuit.ai/sdr-oursourcing/">Why Outsource?</a></li>
+                                                        <li><a href="http://pursuit.ai/pricing/">Plans & Pricing</a></li>
+                                                      </ul>
+                                                    </li>
+                                                <li class="dropdown">
+                                                      <a href="http://pursuit.ai/about/" class="dropdown-toggle" data-toggle="dropdown">Company <b class="caret"></b></a>
+                                                      <ul class="dropdown-menu">
+                                                        <li><a href="http://pursuit.ai/blog/">Blog</a></li>
+                                                        <li><a href="http://pursuit.ai/careers/">Careers</a></li>
+                                                      </ul>
+                                                </li>
+                                                <li class="GetInTouchCls">
+                                                    <a href="http://pursuit.ai/contact/">Get In Touch</a>
                                                 </li>
                                                 <li>
-                                                        <a href="/accounts/register/">Signup</a>
-                                                        
-                                                    </li>					
-                                                                  
-                                        </ul>
-                                    </div>
-                
-                                </nav>
-                            </div>
-                            </div>
+                                                        <a href="/app">Home</a>
+
+                                                    </li>
+                                                    <li>
+                                                            <a href="/accounts/register/">Signup</a>
+
+                                                        </li>
+
+                                            </ul>
+                                        </div>
+
+                                    </nav>
+                                </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    </header>
+                        </header>
                     <div class="loginBg">
                     <div class="container">
                         <div class="row">
@@ -248,31 +154,8 @@ button {
                             </div>
                             </div>
                     </footer>
-                     <script>
-                        var previousScroll = 0,
-                            headerOrgOffset = $('#header').offset().top;
-                
-                        <!-- $('#header-wrap').height($('#header').height()); -->
-                
-                        $(window).scroll(function() {
-                            var currentScroll = $(this).scrollTop();
-                            console.log(currentScroll + " and " + previousScroll + " and " + headerOrgOffset);
-                            if (currentScroll > headerOrgOffset) {
-                                if (currentScroll > previousScroll) {
-                                    $('#header').fadeIn();
-                                    $('#header').addClass('fixed');
-                                    
-                                } else {
-                                    $('#header').fadeIn();
-                                    $('#header').addClass('fixed');
-                                }
-                            } else {
-                                $('#header').removeClass('fixed');
-                            }
-                            previousScroll = currentScroll;
-                        });
-                    </script>
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+{#<script src="{% static 'js/jquery.min.js' %}"></script>#}
+{#<script src="{% static 'js/script.js' %}"></script>#}
   </body>
-</html>
+{#</html>#}

@@ -8,7 +8,7 @@ from multiprocessing import Lock, Process, Queue, current_process, Manager, Pool
 # from helper import *
 RUN_ID = "002"
 DATE_PULLED = datetime.datetime.now()
-  
+
 WRITEOUT_ORDER = ['first_name','last_name','name', 'company','company_url', 'email_guess','email_score']
 MAILBOX_API = "333e2a9a897eeba9ad3204f3c007ca10"
 dir_path = os.path.dirname(os.path.realpath(__file__))
