@@ -27,13 +27,13 @@ class Document(models.Model):
 
 
 class Search_details(models.Model):
-    user = models.ForeignKey(User, null=True, blank=True)
+    user = models.CharField( max_length=100, null=True, blank=True)
     run_id = models.CharField(max_length=3)
     date_pulled = models.CharField(max_length=15)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
-    email_original = models.EmailField(max_length=30)
+    # email_original = models.EmailField(max_length=30)
     company_url = models.CharField(max_length=30)
     email_guess = models.CharField(max_length=30)
     email_score = models.CharField(max_length=3)

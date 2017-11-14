@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import json
 from .form import UserLoginForm, UserRegisterForm, DocumentForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, render_to_response
@@ -11,7 +12,7 @@ from .models import UserProfilename, Document
 from datetime import datetime
 import csv
 from django.core.urlresolvers import reverse
-from django.template import RequestContext
+from models import Search_details
 from Controller import validate_email
 from django.contrib.auth.decorators import login_required
 
@@ -29,7 +30,16 @@ def index_view(request):
         data_list = [first_name, last_name, title, company_website]
         print data_list
         person_details = validate_email.select_type(data_list)
+        # person_details = dict(person_details)
         print person_details
+        # if request.user == None:
+        user = "Guest"
+        data_update = Search_details(user=user, run_id=002, date_pulled=datetime.now(),
+                                     first_name=person_details[0]['first_name'], last_name=person_details[0]["last_name"],
+                                     name=person_details[0]["name"], company_url=person_details[0]["company_url"],
+                                     email_guess=person_details[0]["email_guess"],
+                                     email_score=person_details[0]["email_score"])
+        data_update.save()
         try:
 
             person_details = person_details[0]['email_guess']
@@ -41,6 +51,7 @@ def index_view(request):
 
 
 # login page
+
 def login_view(request):
     print "inside login viewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww "
     print request.POST
@@ -102,11 +113,34 @@ def logout_view(request):
 
 def validate_view(request):
     if request.method == 'POST':
-        print request.POST
-        a = 8
-        test = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR')).split(',')[-1].strip()
-        print test
-        return render(request, 'login/profile.html', {'b': a})
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        title = 'CEO'
+        # company_email = request.POST.get('company_email')
+        company_website = request.POST.get('company_website')
+
+        print first_name, last_name, title, company_website
+        data_list = [first_name, last_name, title, company_website]
+        print data_list
+        person_details = validate_email.select_type(data_list)
+        # person_details = dict(person_details)
+        print person_details
+        # if request.user == None:
+        user = request.user
+        data_update = Search_details(user=user, run_id=002, date_pulled=datetime.now(),
+                                     first_name=person_details[0]['first_name'], last_name=person_details[0]["last_name"],
+                                     name=person_details[0]["name"], company_url=person_details[0]["company_url"],
+                                     email_guess=person_details[0]["email_guess"],
+                                     email_score=person_details[0]["email_score"])
+        data_update.save()
+        try:
+
+            person_details = person_details[0]['email_guess']
+        except:
+            person_details = "domain not found"
+        return render(request, 'login/index.html', {'details': person_details})
+    if request.method == 'GET':
+        return render(request, "login/index.html", {})
 
 
 @login_required

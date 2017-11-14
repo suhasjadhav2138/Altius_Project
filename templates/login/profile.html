@@ -110,51 +110,50 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="CSVPageF">
-                    <form role="form" class="text-center csfrom">
-                        <p class="CvsFormTitle">You have X email credits remaining</p>
-
+                    <form method="POST" action="/validate/" class="text-center csfrom">{% csrf_token %}
                         <div class="row">
                             <div class="col-md-6 text-left">
                                 <label>
                                     First Name
                                 </label>
-                                <input type="text" class="form-control" placeholder="First Name"/>
+                                <input type="text" class="form-control" placeholder="First Name" name="first_name"/>
                             </div>
                             <div class="col-md-6 text-left">
                                 <label>
                                     Last Name
                                 </label>
-                                <input type="text" class="form-control" placeholder="Last Name"/>
+                                <input type="text" class="form-control" placeholder="Last Name" name="last_name"/>
                             </div>
                         </div>
                         <br>
 
                         <div class="row">
+
                             <div class="col-md-12 text-left">
                                 <div class="form-group">
                                     <label>
                                         Company Website
                                     </label>
-                                    <input type="text" class="form-control Logininput" placeholder="Company Website"/>
+                                    <input type="text" class="form-control headinput" placeholder="Company Website"
+                                           name="company_website"/>
                                 </div>
+
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-default LoginSearchBtn">
-                            Search
-                        </button>
-                        <button type="submit" class="btn btn-success  LoginUploadBtn">
-                            Upload CSV
+                        <button type="submit" class="btn btn-default Searchresult">
+                            Submit
                         </button>
                         <div class="row customcsvRow">
                             <div class="col-md-12 cvscols">
                                 <table class="table searchreult">
-                                    <tbody>
                                     <tr>
+                                        <h3>Search Results</h3>
+
                                         <td>
-                                            <span class="xyz">xyz@gmail.com</span>
+                                            <span class="xyz">{{ details }}</span>
+                                            <!-- {{ details }} -->
                                         </td>
                                     </tr>
-                                    </tbody>
                                 </table>
                             </div>
                         </div>
